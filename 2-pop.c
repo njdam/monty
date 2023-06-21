@@ -27,4 +27,6 @@ void f_pop(stack_t **head, int line_number)
 		if (current->next != NULL)
 			(*head)->next = (current->next)->next;
 	}
+
+	free(current);
 }
