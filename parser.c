@@ -30,6 +30,8 @@ void f_parser(FILE *file)
 			f_pint(&stack, line_number);
 		else if (strcmp(starg.args, "pop") == 0)
 			f_pop(&stack, line_number);
+		else if (strcmp(starg.args, "swap") == 0)
+			f_swap(&stack, line_number);
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, starg.args);
