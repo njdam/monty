@@ -11,9 +11,12 @@ void f_pop(stack_t **head, int line_number)
 {
 	stack_t *current = *head;
 
-	if (!(*head) || !head)
+	if (!(*head))
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		fclose(starg.file);
+		free(starg.cont);
+		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 
