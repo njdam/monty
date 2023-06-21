@@ -13,7 +13,7 @@ void f_swap(stack_t **head, int line_number)
 
 	if (!(*head) || (*head)->next == NULL)
 	{
-		fprintf(stderr, "%d: can't swap, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		fclose(starg.file);
 		free(starg.cont);
 		free_stack(*head);
