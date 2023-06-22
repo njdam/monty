@@ -9,7 +9,7 @@
  */
 void f_add(stack_t **head, int line_number)
 {
-	int num1, num2;
+	int sum;
 	stack_t *current = *head;
 
 	if (!(*head) || (*head)->next == NULL)
@@ -21,13 +21,9 @@ void f_add(stack_t **head, int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	num1 = (*head)->n;
-	num2 = ((*head)->next)->n;
-	(*head)->n = num1 + num2;
+	sum = current->n + (current->next)->n;
+	(current->next)->n = sum;
+	*head = current->next;
 
-	if ((current->next)->next)
-		(*head)->next = (current->next)->next;
-	else
-		(*head)->next = NULL;
-
+	free(current);
 }
