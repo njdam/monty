@@ -38,6 +38,8 @@ void f_parser(FILE *file)
 			f_nop(&stack, line_number);
 		else if (strcmp(starg.args, "sub") == 0)
 			f_sub(&stack, line_number);
+		else if (strcmp(starg.args, "div") == 0)
+			f_div(&stack, line_number);
 		else
 			errorcode(stack, line_number);
 	}
