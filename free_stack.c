@@ -2,7 +2,7 @@
 
 /**
 * free_stack - is a function to free doubly linked list of stack;
-* @head: is head node of the stack;
+* @head: is head node of stack;
 *
 * Return: nothing.
 */
