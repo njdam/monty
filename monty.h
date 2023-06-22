@@ -58,7 +58,7 @@ typedef struct instruction_s
 
 /* Global variable and function to fix implicit declaration */
 starg_t starg;
-int getline(char **line, size_t *size, FILE *file);
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
 /* Monty Project's Prototypes */
 void f_push(stack_t **head, unsigned int line_number);

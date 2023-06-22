@@ -16,7 +16,7 @@ void f_div(stack_t **head, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		fclose(starg.file);
-		/*free(starg.cont);*/
+		free(starg.cont);
 		free_stack(head);
 		exit(EXIT_FAILURE);
 	}
@@ -25,7 +25,7 @@ void f_div(stack_t **head, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		fclose(starg.file);
-		/*free(starg.cont);*/
+		free(starg.cont);
 		free_stack(head);
 		exit(EXIT_FAILURE);
 	}
