@@ -9,17 +9,17 @@
 */
 void f_pstr(stack_t **head, unsigned int line_number)
 {
-	int c;
+	stack_t *current = *head;
 	(void)line_number;
 
-	while (*head)
+	while (current)
 	{
-		c = (*head)->n;
-		if (c <= 0 || c > 127)
+		if (current->n <= 0 || current->n > 127)
 			break;
-		putchar(c);
-		*head = (*head)->next;
+
+		printf("%c", current->n);
+		current = current->next;
 	}
 
-	putchar('\n');
+	printf("\n");
 }
