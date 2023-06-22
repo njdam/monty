@@ -7,7 +7,7 @@
  *
  * Return: nothing.
  */
-void f_sub(stack_t **head, int line_number)
+void f_sub(stack_t **head, unsigned int line_number)
 {
 	int result;
 	stack_t *current = *head;
@@ -16,8 +16,8 @@ void f_sub(stack_t **head, int line_number)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 		fclose(starg.file);
-		free(starg.cont);
-		free_stack(*head);
+		/*free(starg.cont);*/
+		free_stack(head);
 		exit(EXIT_FAILURE);
 	}
 

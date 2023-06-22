@@ -56,25 +56,27 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/* Global variable */
+/* Global variable and function to fix implicit declaration */
 starg_t starg;
+int getline(char **line, size_t *size, FILE *file);
 
 /* Monty Project's Prototypes */
 void f_push(stack_t **head, unsigned int line_number);
 void f_pall(stack_t **head, unsigned int line_number);
-void free_stack(stack_t *head);
+void free_stack(stack_t **head);
 void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
 void f_queue(stack_t **head, unsigned int line_number);
 void f_pint(stack_t **head, unsigned int line_number);
-void f_parser(FILE *file);
-void errorcode(stack_t *stack, int line_number);
-void f_pop(stack_t **head, int line_number);
-void f_swap(stack_t **head, int line_number);
-void f_add(stack_t **head, int line_number);
-void f_nop(stack_t **head, int line_number);
-void f_sub(stack_t **head, int line_number);
-void f_div(stack_t **head, int line_number);
-void f_mul(stack_t **head, int line_number);
+int f_opcode(stack_t **stack, unsigned int line_number);
+void errorcode(stack_t **stack, unsigned int line_number);
+void f_pop(stack_t **head, unsigned int line_number);
+void f_swap(stack_t **head, unsigned int line_number);
+void f_add(stack_t **head, unsigned int line_number);
+void f_nop(stack_t **head, unsigned int line_number);
+void f_sub(stack_t **head, unsigned int line_number);
+void f_div(stack_t **head, unsigned int line_number);
+void f_mul(stack_t **head, unsigned int line_number);
+void f_mod(stack_t **head, unsigned int line_number);
 
 #endif /* MONTY_H */

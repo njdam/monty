@@ -1,20 +1,20 @@
 #include "monty.h"
 
 /**
- * f_div - is a function to divide two top elements of stack;
+ * f_mod - is a function to find remainder of top elements of stack;
  * @head: is double pointer of head node of stack;
  * @line_number: is count of line number;
  *
  * Return: nothing.
  */
-void f_div(stack_t **head, unsigned int line_number)
+void f_mod(stack_t **head, unsigned int line_number)
 {
 	int result;
 	stack_t *current = *head;
 
 	if (!(*head) || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
 		fclose(starg.file);
 		/*free(starg.cont);*/
 		free_stack(head);
@@ -30,7 +30,7 @@ void f_div(stack_t **head, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	result = (current->next)->n / current->n;
+	result = (current->next)->n % current->n;
 	(current->next)->n = result;
 	*head = current->next;
 

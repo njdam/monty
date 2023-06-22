@@ -7,7 +7,7 @@
  *
  * Return: nothing.
  */
-void f_pop(stack_t **head, int line_number)
+void f_pop(stack_t **head, unsigned int line_number)
 {
 	stack_t *current = *head;
 
@@ -15,8 +15,8 @@ void f_pop(stack_t **head, int line_number)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 		fclose(starg.file);
-		free(starg.cont);
-		free_stack(*head);
+		/*free(starg.cont);*/
+		free_stack(head);
 		exit(EXIT_FAILURE);
 	}
 

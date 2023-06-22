@@ -24,8 +24,8 @@ void f_push(stack_t **head, unsigned int line_number)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			fclose(starg.file);
-			free(starg.cont);
-			free_stack(*head);
+			/*free(starg.cont);*/
+			free_stack(head);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -33,8 +33,8 @@ void f_push(stack_t **head, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		fclose(starg.file);
-		free(starg.cont);
-		free_stack(*head);
+		/*free(starg.cont);*/
+		free_stack(head);
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(starg.args);
