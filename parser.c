@@ -36,14 +36,26 @@ void f_parser(FILE *file)
 			f_add(&stack, line_number);
 		else if (strcmp(starg.args, "nop") == 0)
 			f_nop(&stack, line_number);
+		else if (strcmp(starg.args, "sub") == 0)
+			f_sub(&stack, line_number);
 		else
-		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, starg.args);
-			fclose(starg.file);
-			free(starg.cont);
-			free_stack(stack);
-			exit(EXIT_FAILURE);
-		}
+			errorcode(stack, line_number);
 	}
 	free_stack(stack);
+}
+
+/**
+ * errorcode - a function for printing error code;
+ * @stack: is a pointer of head node of stack;
+ * @line_number: is count number of line;
+ *
+ * Return: nothing.
+ */
+void errorcode(stack_t *stack, int line_number)
+{
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, starg.args);
+	fclose(starg.file);
+	free(starg.cont);
+	free_stack(stack);
+	exit(EXIT_FAILURE);
 }
