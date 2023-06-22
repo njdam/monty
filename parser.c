@@ -40,6 +40,8 @@ void f_parser(FILE *file)
 			f_sub(&stack, line_number);
 		else if (strcmp(starg.args, "div") == 0)
 			f_div(&stack, line_number);
+		else if (strcmp(starg.args, "mul") == 0)
+			f_mul(&stack, line_number);
 		else
 			errorcode(stack, line_number);
 	}
