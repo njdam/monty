@@ -65,7 +65,7 @@ int f_opcode(stack_t **stack, unsigned int line_number)
 
 	ops = strtok(starg.cont, " \n\t"); /* for extracting first args as opcode */
 	if (ops && ops[0] == '#')
-		return (0); /* to skip comment */
+		return (0); /* to handle comments (10-comments.c) */
 
 	starg.args = strtok(NULL, " \n\t"); /* to extract second argument */
 	while (opcode_t[i].opcode && ops)
