@@ -34,6 +34,8 @@ void f_parser(FILE *file)
 			f_swap(&stack, line_number);
 		else if (strcmp(starg.args, "add") == 0)
 			f_add(&stack, line_number);
+		else if (strcmp(starg.args, "nop") == 0)
+			f_nop(&stack, line_number);
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, starg.args);

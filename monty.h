@@ -71,5 +71,6 @@ void f_parser(FILE *file);
 void f_pop(stack_t **head, int line_number);
 void f_swap(stack_t **head, int line_number);
 void f_add(stack_t **head, int line_number);
+void f_nop(stack_t **head, int line_number);
 
 #endif /* MONTY_H */
