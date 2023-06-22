@@ -61,7 +61,7 @@ int f_opcode(stack_t **stack, unsigned int line_number)
 		{"pop", f_pop}, {"swap", f_swap}, {"add", f_add},
 		{"nop", f_nop}, {"sub", f_sub}, {"div", f_div},
 		{"mul", f_mul}, {"mod", f_mod}, {"pchar", f_pchar},
-		{"pstr", f_pstr}, {NULL, NULL}
+		{"pstr", f_pstr}, {"rotl", f_rotl}, {NULL, NULL}
 	};
 
 	ops = strtok(starg.cont, " \n\t"); /* for extracting first args as opcode */
