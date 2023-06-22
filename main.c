@@ -54,14 +54,15 @@ int main(int argc, char *argv[])
  */
 int f_opcode(stack_t **stack, unsigned int line_number)
 {
+	unsigned int i = 0;
+	char *ops;
 	instruction_t opcode_t[] = {
 		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 		{"pop", f_pop}, {"swap", f_swap}, {"add", f_add},
 		{"nop", f_nop}, {"sub", f_sub}, {"div", f_div},
-		{"mul", f_mul}, {"mod", f_mod}, {NULL, NULL}
+		{"mul", f_mul}, {"mod", f_mod}, {"pchar", f_pchar},
+		{NULL, NULL}
 	};
-	char *ops;
-	unsigned int i = 0;
 
 	ops = strtok(starg.cont, " \n\t"); /* for extracting first args as opcode */
 	if (ops && ops[0] == '#')
