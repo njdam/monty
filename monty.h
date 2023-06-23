@@ -82,5 +82,7 @@ void f_pchar(stack_t **head, unsigned int line_number);
 void f_pstr(stack_t **head, unsigned int line_number);
 void f_rotl(stack_t **head, unsigned int line_number);
 void f_rotr(stack_t **head, unsigned int line_number);
+void f_stack(stack_t **head, unsigned int line_number);
+void f_queue(stack_t **head, unsigned int line_number);
 
 #endif /* MONTY_H */
